@@ -6,8 +6,6 @@ function StaffMember(name,discountPercent){
 
 var sally = new StaffMember("Sally",5);
 var bob = new StaffMember("Bob",10);
-
-// Create yourself again as 'me' with a staff discount of 20%
 var me = new StaffMember("Zach", 20);
 
 var cashRegister = {
@@ -30,7 +28,6 @@ var cashRegister = {
         this.total -= this.lastTransactionAmount;
         this.lastTransactionAmount = 0;
     },
-    // Create a new method applyStaffDiscount here
     applyStaffDiscount: function(employee){
         this.discountPercent/100*this.total=this.total;
     }
@@ -40,9 +37,6 @@ var cashRegister = {
 cashRegister.scan('eggs',1);
 cashRegister.scan('milk',1);
 cashRegister.scan('magazine',3);
-// Apply your staff discount by passing the 'me' object 
-// to applyStaffDiscount
 applyStaffDiscount(me);
 
-// Show the total bill
 console.log('Your bill is '+cashRegister.total.toFixed(2));
